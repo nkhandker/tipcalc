@@ -22,21 +22,34 @@ class ViewController: UIViewController {
         tipLabel.text = "$0.00"
         totalLabel.text = "$0.00"
         self.logo.alpha = 1;
-        /*tipLabel.center.y  -= view.bounds.height
-        tipPercent.center.y -= view.bounds.height
-        totalLabel.center.y -= view.bounds.height
-        background.center.y  -= view.bounds.height
-        billField.center.y = view.center.y*/
-        
+        tipLabel.center.y  -= view.bounds.maxY
+        tipPercent.center.y -= view.bounds.maxY
+        totalLabel.center.y -= view.bounds.maxY
+        background.center.y  -= view.bounds.maxY
+        billField.center.y = view.center.y
     }
     
-
+    class NavigationController: UINavigationController, UIViewControllerTransitioningDelegate {
+        
+        override func viewDidLoad() {
+            super.viewDidLoad()
+            
+            // Status bar white font
+            self.navigationBar.barStyle = UIBarStyle.Black
+            self.navigationBar.tintColor = UIColor.whiteColor()
+        }
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
-    
+  
+    override func viewWillAppear(animated: Bool) {
+        UIView.animateWithDuration(0.8, animations: {
+           self.billField.center.y = self.logo.center.y
+        })
+    }
     
  
     @IBAction func onEditingChanged(sender: AnyObject) {
@@ -50,18 +63,37 @@ class ViewController: UIViewController {
             background.hidden = false
             UIView.animateWithDuration(0.4, animations: {
             self.logo.alpha = 0
+            self.background.alpha = 1
+            self.tipPercent.alpha = 1
+            self.totalLabel.alpha = 1
+            self.tipLabel.alpha = 1
         })
-            
+            UIView.animateWithDuration(0.4, animations: {
+                
+                self.background.center.y = (self.background.bounds.height) + self.tipPercent.bounds.height
+                self.tipPercent.center.y = (self.background.frame.minY + self.logo.frame.maxY)/2
+                self.totalLabel.center.y = self.view.center.x - 70
+                self.tipLabel.center.y   = self.totalLabel.bounds.minY + 40
+                
+                
+            })
         }
             
         else if billField.text.isEmpty {
             
-            totalLabel.hidden = true
-            tipLabel.hidden = true
-            tipPercent.hidden = true
-            background.hidden = true
             UIView.animateWithDuration(0.4, animations: {
                 self.logo.alpha = 1
+                
+                self.background.alpha = 0
+                self.tipPercent.alpha = 0
+                self.totalLabel.alpha = 0
+                self.tipLabel.alpha = 0
+            })
+            UIView.animateWithDuration(0.4, animations: {
+                self.tipLabel.center.y  = self.view.bounds.maxY
+                self.tipPercent.center.y = self.view.bounds.maxY
+                self.totalLabel.center.y = self.view.bounds.maxY
+                self.background.center.y  = self.view.bounds.maxY
             })
         }
         
@@ -77,7 +109,8 @@ class ViewController: UIViewController {
 
     
     @IBAction func onTap(sender: AnyObject) {
+        if billField.text.isEmpty{
         view.endEditing(true)
-    }
+        }
 }
-
+}
