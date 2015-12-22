@@ -55,7 +55,7 @@ class ViewController: UIViewController {
     @IBAction func onEditingChanged(sender: AnyObject) {
         
         
-        if billField.text.isEmpty == false {
+        if let y : Bool? = billField.text!.isEmpty == false {
         
             totalLabel.hidden = false
             tipLabel.hidden = false
@@ -79,7 +79,7 @@ class ViewController: UIViewController {
             })
         }
             
-        else if billField.text.isEmpty {
+        else if let y : Bool? = billField.text!.isEmpty {
             
             UIView.animateWithDuration(0.4, animations: {
                 self.logo.alpha = 1
@@ -98,10 +98,10 @@ class ViewController: UIViewController {
         }
         
         var tipPercentages = [0.1, 0.15, 0.2]
-        var percent = tipPercentages[tipPercent.selectedSegmentIndex]
-        var billAmount = (billField.text as NSString).doubleValue
-        var tip = billAmount * percent
-        var total = billAmount + tip
+        let percent = tipPercentages[tipPercent.selectedSegmentIndex]
+        let billAmount = (billField.text! as NSString).doubleValue
+        let tip = billAmount * percent
+        let total = billAmount + tip
         
         tipLabel.text = String(format: "$%.2f" , tip)
         totalLabel.text = String(format: "$%.2f" , total)
@@ -109,7 +109,7 @@ class ViewController: UIViewController {
 
     
     @IBAction func onTap(sender: AnyObject) {
-        if billField.text.isEmpty{
+        if billField.text!.isEmpty{
         view.endEditing(true)
         }
 }
