@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>B2CBE972-B66E-4A75-992D-3889A577909B</string>
+	<key>IDESourceControlProjectName</key>
+	<string>tipcalc</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>08933506F07E23A0BD655DCC98F943A53C5541D3</key>
+		<string>https://github.com/nkhandker/tipcalc</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>tipcalc.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>08933506F07E23A0BD655DCC98F943A53C5541D3</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/nkhandker/tipcalc</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>08933506F07E23A0BD655DCC98F943A53C5541D3</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>08933506F07E23A0BD655DCC98F943A53C5541D3</string>
+			<key>IDESourceControlWCCName</key>
+			<string>tipcalc</string>
+		</dict>
+	</array>
+</dict>
+</plist>
