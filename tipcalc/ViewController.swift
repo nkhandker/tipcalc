@@ -1,5 +1,5 @@
 import UIKit
-import Cocoa
+
 
 
 class ViewController: UIViewController {
@@ -22,11 +22,11 @@ class ViewController: UIViewController {
         tipLabel.text = "$0.00"
         totalLabel.text = "$0.00"
         self.logo.alpha = 1;
-        tipLabel.center.y  -= view.bounds.height
+        /*tipLabel.center.y  -= view.bounds.height
         tipPercent.center.y -= view.bounds.height
         totalLabel.center.y -= view.bounds.height
         background.center.y  -= view.bounds.height
-        billField.center.y = view.center.y
+        billField.center.y = view.center.y*/
         
     }
     
@@ -36,11 +36,8 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    override func viewWillAppear(animated: Bool) {
-        UIView.animateWithDuration(0.3, 0.0, , animations: {
-        self.billField += billField.frame.height
-        }completion: nil)
-    }
+    
+    
  
     @IBAction func onEditingChanged(sender: AnyObject) {
         
