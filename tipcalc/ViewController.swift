@@ -20,15 +20,14 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        /*tipLabel.text = "$0.00"
-        totalLabel.text = "$0.00"
-        self.logo.alpha = 1;
-        tipLabel.center.y  -= view.bounds.maxY
-        tipPercent.center.y -= view.bounds.maxY
-        totalLabel.center.y -= view.bounds.maxY
-        background.center.y  -= view.bounds.maxY
-        billField.center.y = view.center.y*/
+    
+        // swipe recognition does same thing as tapping
+        
+        let swipeDown = UISwipeGestureRecognizer(target: self, action: "onTap:")
+        swipeDown.direction = UISwipeGestureRecognizerDirection.Down
+        self.view.addGestureRecognizer(swipeDown)
+        
+        //initial setup for labels fields and logo
         
         tipLabel.text = "$0.00"
         totalLabel.text = "$0.00"
@@ -50,10 +49,10 @@ class ViewController: UIViewController {
     }
 
     @IBAction func onEditMove(sender: AnyObject) {
-        UIView.animateWithDuration(0.8, animations: {
+        UIView.animateWithDuration(0.3, animations: {
             self.logo.alpha = 1;
         })
-        UIView.animateWithDuration(0.8, delay: 0.0,  options: UIViewAnimationOptions.CurveEaseOut, animations: {
+        UIView.animateWithDuration(0.3, delay: 0.0,  options: UIViewAnimationOptions.CurveEaseOut, animations: {
             self.billField.center.y = self.placeholder.center.y
             self.logo.center.y = self.placeholder.center.y
         }, completion: nil )
@@ -68,6 +67,7 @@ class ViewController: UIViewController {
         
         let y : Bool? = billField.text!.isEmpty;
         
+       
         
           if y == false {
         
@@ -75,14 +75,14 @@ class ViewController: UIViewController {
             tipLabel.hidden = false
             tipPercent.hidden = false
             background.hidden = false
-            UIView.animateWithDuration(0.4, animations: {
+            UIView.animateWithDuration(0.2, animations: {
             self.logo.alpha = 0
             self.background.alpha = 1
             self.tipPercent.alpha = 1
             self.totalLabel.alpha = 1
             self.tipLabel.alpha = 1
         })
-            UIView.animateWithDuration(0.4, animations: {
+            UIView.animateWithDuration(0.3, animations: {
                 
                 self.background.center.y = (self.background.bounds.height) + self.tipPercent.bounds.height
                 self.tipPercent.center.y = (self.background.frame.minY + self.logo.frame.maxY)/2
@@ -95,7 +95,7 @@ class ViewController: UIViewController {
             
         else if y == true {
             
-            UIView.animateWithDuration(0.4, animations: {
+            UIView.animateWithDuration(0.2, animations: {
                 self.logo.alpha = 1
                 
                 self.background.alpha = 0
@@ -103,7 +103,7 @@ class ViewController: UIViewController {
                 self.totalLabel.alpha = 0
                 self.tipLabel.alpha = 0
             })
-            UIView.animateWithDuration(0.4, animations: {
+            UIView.animateWithDuration(0.3, animations: {
                 self.tipLabel.center.y  = self.view.bounds.maxY
                 self.tipPercent.center.y = self.view.bounds.maxY
                 self.totalLabel.center.y = self.view.bounds.maxY
@@ -123,13 +123,15 @@ class ViewController: UIViewController {
 
     
     @IBAction func onTap(sender: AnyObject) {
-        if billField.text!.isEmpty{
         
-        UIView.animateWithDuration(0.8, delay: 0.0,  options: UIViewAnimationOptions.CurveEaseOut, animations: {
+        billField.text = "";
+        
+        onEditingChanged(self)
+        UIView.animateWithDuration(0.3, delay: 0.0,  options: UIViewAnimationOptions.CurveEaseOut, animations: {
             self.billField.center.y = self.view.center.y
             self.logo.center.y = self.view.center.y
             }, completion: nil )
         view.endEditing(true)
         }
-}
+
 }
