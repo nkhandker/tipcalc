@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -35,6 +36,7 @@
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="64"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                 <connections>
+                                    <action selector="onEditMove:" destination="vXZ-lx-hvc" eventType="editingDidBegin" id="Wdl-o7-yNm"/>
                                     <action selector="onEditingChanged:" destination="vXZ-lx-hvc" eventType="editingChanged" id="vUN-2f-OnA"/>
                                 </connections>
                             </textField>
@@ -66,6 +68,13 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="headTruncation" adjustsFontSizeToFit="NO" id="7AC-Yq-kBf">
+                                <rect key="frame" x="26" y="49" width="189" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="64"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.28923851639999998" green="0.80383917299999996" blue="0.35027413489999998" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
@@ -77,6 +86,7 @@
                         <outlet property="background" destination="9cE-ZT-8eu" id="EmB-A9-2UV"/>
                         <outlet property="billField" destination="xhh-nj-EZD" id="BIS-8d-U87"/>
                         <outlet property="logo" destination="xJP-X0-4ga" id="KwD-uS-0hI"/>
+                        <outlet property="placeholder" destination="7AC-Yq-kBf" id="Qma-Cj-8ee"/>
                         <outlet property="tipLabel" destination="nLe-DF-w2V" id="b0r-oO-UI7"/>
                         <outlet property="tipPercent" destination="Bai-ft-bPn" id="ZCf-be-jdy"/>
                         <outlet property="totalLabel" destination="1sh-0r-t0a" id="2hV-BI-sTi"/>
@@ -99,9 +109,4 @@
             <point key="canvasLocation" x="234" y="328"/>
         </scene>
     </scenes>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
-    </simulatedMetricsContainer>
 </document>

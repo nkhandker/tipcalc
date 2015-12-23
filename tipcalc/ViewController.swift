@@ -16,46 +16,60 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var logo: UILabel!
     
+    @IBOutlet weak var placeholder: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        tipLabel.text = "$0.00"
+        /*tipLabel.text = "$0.00"
         totalLabel.text = "$0.00"
         self.logo.alpha = 1;
         tipLabel.center.y  -= view.bounds.maxY
         tipPercent.center.y -= view.bounds.maxY
         totalLabel.center.y -= view.bounds.maxY
         background.center.y  -= view.bounds.maxY
-        billField.center.y = view.center.y
-    }
-    
-    class NavigationController: UINavigationController, UIViewControllerTransitioningDelegate {
+        billField.center.y = view.center.y*/
         
-        override func viewDidLoad() {
-            super.viewDidLoad()
-            
-            // Status bar white font
-            self.navigationBar.barStyle = UIBarStyle.Black
-            self.navigationBar.tintColor = UIColor.whiteColor()
-        }
+        tipLabel.text = "$0.00"
+        totalLabel.text = "$0.00"
+        self.logo.alpha = 0;
+        tipLabel.center.y  -= view.bounds.maxY
+        tipPercent.center.y -= view.bounds.maxY
+        totalLabel.center.y -= view.bounds.maxY
+        background.center.y  -= view.bounds.maxY
+        billField.center.y = view.center.y
+        billField.center.x = view.center.x
+        logo.center.y = view.center.y
     }
+   
+
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func onEditMove(sender: AnyObject) {
+        UIView.animateWithDuration(0.8, animations: {
+            self.logo.alpha = 1;
+        })
+        UIView.animateWithDuration(0.8, delay: 0.0,  options: UIViewAnimationOptions.CurveEaseOut, animations: {
+            self.billField.center.y = self.placeholder.center.y
+            self.logo.center.y = self.placeholder.center.y
+        }, completion: nil )
+    }
   
     override func viewWillAppear(animated: Bool) {
-        UIView.animateWithDuration(0.8, animations: {
-           self.billField.center.y = self.logo.center.y
-        })
+        
     }
     
  
     @IBAction func onEditingChanged(sender: AnyObject) {
         
+        let y : Bool? = billField.text!.isEmpty;
         
-        if let y : Bool? = billField.text!.isEmpty == false {
+        
+          if y == false {
         
             totalLabel.hidden = false
             tipLabel.hidden = false
@@ -79,7 +93,7 @@ class ViewController: UIViewController {
             })
         }
             
-        else if let y : Bool? = billField.text!.isEmpty {
+        else if y == true {
             
             UIView.animateWithDuration(0.4, animations: {
                 self.logo.alpha = 1
@@ -110,6 +124,11 @@ class ViewController: UIViewController {
     
     @IBAction func onTap(sender: AnyObject) {
         if billField.text!.isEmpty{
+        
+        UIView.animateWithDuration(0.8, delay: 0.0,  options: UIViewAnimationOptions.CurveEaseOut, animations: {
+            self.billField.center.y = self.view.center.y
+            self.logo.center.y = self.view.center.y
+            }, completion: nil )
         view.endEditing(true)
         }
 }
