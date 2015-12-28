@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="odA-T6-trq">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -14,7 +14,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="1" id="Bai-ft-bPn">
-                                <rect key="frame" x="26" y="138" width="269" height="29"/>
+                                <rect key="frame" x="26" y="159" width="269" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <segments>
@@ -28,7 +28,7 @@
                                 </connections>
                             </segmentedControl>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$" textAlignment="right" minimumFontSize="17" id="xhh-nj-EZD">
-                                <rect key="frame" x="26" y="59" width="269" height="65"/>
+                                <rect key="frame" x="26" y="80" width="269" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.2390293886" green="0.67268386989999995" blue="0.28992940099999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -62,14 +62,14 @@
                                 <color key="backgroundColor" red="0.2390293886" green="0.67268386989999995" blue="0.28992940099999998" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tipcalc" textAlignment="center" lineBreakMode="headTruncation" adjustsFontSizeToFit="NO" id="xJP-X0-4ga">
-                                <rect key="frame" x="26" y="49" width="189" height="75"/>
+                                <rect key="frame" x="26" y="80" width="189" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="64"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="headTruncation" adjustsFontSizeToFit="NO" id="7AC-Yq-kBf">
-                                <rect key="frame" x="26" y="49" width="189" height="75"/>
+                                <rect key="frame" x="26" y="80" width="189" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="64"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -82,6 +82,13 @@
                             <outletCollection property="gestureRecognizers" destination="ZUc-dO-WHk" appends="YES" id="hzv-Fo-pK8"/>
                         </connections>
                     </view>
+                    <navigationItem key="navigationItem" id="ad0-im-vxd">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="49e-w6-kDu">
+                            <connections>
+                                <segue destination="0VP-du-TLm" kind="push" id="SCW-KI-m1d"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="background" destination="9cE-ZT-8eu" id="EmB-A9-2UV"/>
                         <outlet property="billField" destination="xhh-nj-EZD" id="BIS-8d-U87"/>
@@ -106,7 +113,41 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="234" y="328"/>
+            <point key="canvasLocation" x="766" y="328"/>
+        </scene>
+        <!--SettingsViewController-->
+        <scene sceneID="qtt-iY-k9L">
+            <objects>
+                <viewController title="SettingsViewController" id="0VP-du-TLm" customClass="SettingsViewController" customModule="tipcalc" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="m3K-Yi-lhJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="HAp-xM-Ka4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Yv-U4-9Mi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1171" y="328"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="MjR-Bc-qeh">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="odA-T6-trq" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="smm-tY-aHI">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="9H9-de-Ydi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="utq-w8-5WA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="374" y="328"/>
         </scene>
     </scenes>
+    <color key="tintColor" red="0.2390293886" green="0.67268386989999995" blue="0.28992940099999998" alpha="1" colorSpace="calibratedRGB"/>
 </document>

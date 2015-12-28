@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		010A23BC1C310EEC006DEEDE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010A23BB1C310EEC006DEEDE /* SettingsViewController.swift */; };
 		01394EF31C289DCB00F8189F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01394EF21C289DCB00F8189F /* AppDelegate.swift */; };
 		01394EF51C289DCB00F8189F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01394EF41C289DCB00F8189F /* ViewController.swift */; };
 		01394EF81C289DCB00F8189F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01394EF61C289DCB00F8189F /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		010A23BB1C310EEC006DEEDE /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		01394EED1C289DCB00F8189F /* tipcalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tipcalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01394EF11C289DCB00F8189F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01394EF21C289DCB00F8189F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 				01394EF41C289DCB00F8189F /* ViewController.swift */,
 				01394EF61C289DCB00F8189F /* Main.storyboard */,
 				01394EF91C289DCB00F8189F /* Images.xcassets */,
+				010A23BB1C310EEC006DEEDE /* SettingsViewController.swift */,
 				01394EFB1C289DCB00F8189F /* LaunchScreen.xib */,
 				01394EF01C289DCB00F8189F /* Supporting Files */,
 			);
@@ -216,6 +219,7 @@
 			files = (
 				01394EF51C289DCB00F8189F /* ViewController.swift in Sources */,
 				01394EF31C289DCB00F8189F /* AppDelegate.swift in Sources */,
+				010A23BC1C310EEC006DEEDE /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
