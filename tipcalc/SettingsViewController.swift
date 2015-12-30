@@ -10,6 +10,8 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
+    @IBOutlet weak var Default: UISegmentedControl!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,6 +23,9 @@ class SettingsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func percentageUpdateOnChange(sender: UISegmentedControl) {
+        let defaultIndex = Default.selectedSegmentIndex
+    }
 
     /*
     // MARK: - Navigation

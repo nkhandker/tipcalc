@@ -122,13 +122,39 @@
                     <view key="view" contentMode="scaleToFill" id="m3K-Yi-lhJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Default tip percentage: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cwf-rY-4qT">
+                                <rect key="frame" x="20" y="120" width="184" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                <color key="textColor" red="0.2390293886" green="0.67268386989999995" blue="0.28992940099999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="highlightedColor" red="0.2390293886" green="0.67268386989999995" blue="0.28992940099999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="1TD-zI-pvP">
+                                <rect key="frame" x="20" y="158" width="280" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.2390293886" green="0.67268386989999995" blue="0.28992940099999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <segments>
+                                    <segment title="10%"/>
+                                    <segment title="15%"/>
+                                    <segment title="20%"/>
+                                </segments>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="percentageUpdateOnChange:" destination="0VP-du-TLm" eventType="editingChanged" id="6Xh-wB-cK1"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="HAp-xM-Ka4"/>
+                    <connections>
+                        <outlet property="Default" destination="1TD-zI-pvP" id="yVC-bo-bWm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Yv-U4-9Mi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1171" y="328"/>
+            <point key="canvasLocation" x="1142" y="328"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="MjR-Bc-qeh">
